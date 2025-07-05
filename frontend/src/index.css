@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can keep global resets here if needed */
+body {
+  font-family: system-ui, sans-serif;
+}
