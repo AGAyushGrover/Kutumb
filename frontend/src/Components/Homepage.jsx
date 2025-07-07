@@ -88,7 +88,7 @@ const HomePage = () => {
               <Link to="/" className="block hover:underline">Home</Link>
               <Link to="/about" className="block hover:underline">About</Link>
               <Link to="/services" className="block hover:underline">Services</Link>
-              <Link to="/contact" className="block hover:underline">Contact</Link>
+              <Link to="/contactus" className="block hover:underline">Contact</Link>
             </nav>
           </motion.div>
         )}
