@@ -68,10 +68,10 @@ const HomePage = () => {
             className="fixed top-0 right-0 h-full w-1/4 bg-black/40 backdrop-blur-sm z-20 flex flex-col items-center justify-center space-y-8"
           >
             <nav className="text-white space-y-4 text-lg">
-              <a href="#" className="block hover:underline">Home</a>
+              {/* <a href="#" className="block hover:underline">Home</a>
               <a href="#" className="block hover:underline">About</a>
-              <a href="#" className="block hover:underline">Services</a>
-              <a href="#" className="block hover:underline">Contact</a>
+              <a href="#" className="block hover:underline">Services</a> */}
+             <Link to="/contactus" className="block hover:underline">Contact</Link>
             </nav>
           </motion.div>
         )}
