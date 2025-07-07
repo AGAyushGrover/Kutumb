@@ -1,7 +1,7 @@
 
 
 import React from 'react'
-import backgroundImage from "../assets/PNGWing.jpeg";
+// import backgroundImage from "../assets/PNGWing.jpeg";
 import logo from "../assets/kutumb-logo.png";
 
  const Contact = () => {

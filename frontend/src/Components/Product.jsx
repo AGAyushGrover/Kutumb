@@ -8,28 +8,84 @@ import "swiper/css/pagination";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 
-import plumberImage from "../assets/ServicePage/plumber.jpg";
-import painterImage from "../assets/ServicePage/painter.jpg";
-import carpenterImage from "../assets/ServicePage/carpenter.jpg";
-import interiorImage from "../assets/ServicePage/interior-designer.jpg";
-import constructorImage from "../assets/ServicePage/constructor.jpg";
-import electricianImage from "../assets/ServicePage/electrician.jpg";
-import marbleWorkerImage from "../assets/ServicePage/Marble.jpg"
+import plumberImage from "../assets/ProductPage/Plumber.jpg";
+import SanitaryImage from "../assets/ProductPage/BathroomSanitary.jpg";
+import painterImage from "../assets/ProductPage/Paint.jpg";
+import carpenterImage from "../assets/ProductPage//Wood.jpg";
+import furnitureImage from "../assets/ProductPage//Furniture.jpg";
+import constructionImage from "../assets/ProductPage//Construction.jpg";
+import electricianImage from "../assets/ProductPage/Electrical.jpg";
+import steelWorksImage from "../assets/ProductPage//SteelWorks.jpg";
+import marbleImage from "../assets/ProductPage//Marble.jpg";
+import machineryImage from "../assets/ProductPage//Machinery.jpg";
 import backgroundImage from "../assets/ServicePage/services-bg.jpg";
 import logoImage from "../assets/kutumb-logo.png";
 
-const services = [
-  { name: "Marble Worker", image: marbleWorkerImage, link: "/services/plumber", description: "Expert floor marble and tile workers for residential & commercial projects." },
-  { name: "Plumber", image: plumberImage, link: "/services/plumber", description: "Expert plumbing for residential & commercial projects." },
-  { name: "Painter", image: painterImage, link: "/services/painter", description: "Professional painting with luxurious finishes." },
-  { name: "Carpenter", image: carpenterImage, link: "/services/carpenter", description: "Custom woodwork & furniture by skilled carpenters." },
-  { name: "Interior Designer", image: interiorImage, link: "/services/interior-designer", description: "Elegant interiors crafted to your vision." },
-  { name: "Constructor", image: constructorImage, link: "/services/constructor", description: "Full-scale construction with premium quality." },
-  { name: "Electrician", image: electricianImage, link: "/services/electrician", description: "Safe, modern electrical solutions for your home." },
+const products = [
+  { 
+    name: "Plumbering Shops", 
+    image: plumberImage, 
+    link: "/products/plumber", 
+    description: "Premium plumbing fittings & sanitary solutions for every project." 
+  },
+  { 
+    name: "Sanitary Shops", 
+    image: SanitaryImage, 
+    link: "/products/sanitary", 
+    description: "Top-quality sanitary ware and bathroom essentials." 
+  },
+  { 
+    name: "Paint Shops", 
+    image: painterImage, 
+    link: "/products/paint", 
+    description: "Vibrant paints & finishes for flawless walls and exteriors." 
+  },
+  { 
+    name: "Wood & Plywood Shops", 
+    image: carpenterImage, 
+    link: "/products/carpenter", 
+    description: "Finest wood, ply, mic, accessories & carpenter supplies for your custom furniture." 
+  },
+  { 
+    name: "Furniture Shops", 
+    image: furnitureImage, 
+    link: "/products/furniture", 
+    description: "Designer furniture that elevates your spaces with style." 
+  },
+  { 
+    name: "Construction Material Shops", 
+    image: constructionImage, 
+    link: "/products/construction", 
+    description: "Reliable construction materials for safe, lasting builds." 
+  },
+  { 
+    name: "Electrical Shops", 
+    image: electricianImage, 
+    link: "/products/electrical", 
+    description: "Modern electricals, wires & fittings for safe installations." 
+  },
+  { 
+    name: "Steel Works Shops", 
+    image: steelWorksImage, 
+    link: "/products/steel-works", 
+    description: "Quality steel works & fabrications for sturdy structures." 
+  },
+  { 
+    name: "Marble Shops", 
+    image: marbleImage, 
+    link: "/products/marble", 
+    description: "Premium marble & stone for elegant floors & surfaces." 
+  },
+  { 
+    name: "Machinery and Shattering Shops", 
+    image: machineryImage, 
+    link: "/products/machinery", 
+    description: "Heavy-duty construction machinery & tools for all needs." 
+  },
 ];
 
 const ratings = [
-  { title: "Trusted Workers", value: 98 },
+  { title: "Trusted Partners", value: 95 },
   { title: "Projects Completed", value: 1200 },
   { title: "Years Experience", value: 15 },
   { title: "Customer Rating", value: 4.9 },
@@ -64,7 +120,7 @@ const Counter = ({ from = 0, to = 100, duration = 2, suffix = "" }) => {
   );
 };
 
-const ServicesPage = () => {
+const ProductsPage = () => {
   return (
     <div className="relative min-h-screen w-full overflow-hidden text-white flex flex-col">
       <div
@@ -87,10 +143,10 @@ const ServicesPage = () => {
 
       <section className="relative text-center pt-10 pb-20">
         <h1 className="text-4xl md:text-7xl font-serif tracking-wide">
-          Our Services
+          Our Partner Shops
         </h1>
         <p className="text-xl mt-4 opacity-80 font-serif">
-          Discover trusted professionals for your dream home.
+          Discover trusted partners and get best deals and products.
         </p>
       </section>
 
@@ -109,16 +165,16 @@ const ServicesPage = () => {
         }}
         className="w-full flex-1"
       >
-        {services.map((service) => (
+        {products.map((service) => (
           <SwiperSlide key={service.name}>
             <div className="relative flex flex-col items-center px-4">
               <div className="relative w-full max-w-xs h-[500px] overflow-hidden shadow-lg">
                 <img src={service.image} alt={service.name} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/40 z-0"></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-center px-4 z-20">
-                  <h2 className="text-2xl md:text-3xl font-serif mb-4 text-white">
-                    {service.name}
-                  </h2>
+                 <h2 className="text-2xl md:text-3xl font-serif mb-4 text-white text-center">
+  {service.name}
+</h2>
                   <p className="text-center max-w-xs mb-6 text-white opacity-90">
                     {service.description}
                   </p>
@@ -160,4 +216,4 @@ const ServicesPage = () => {
   );
 };
 
-export default ServicesPage;
+export default ProductsPage;
