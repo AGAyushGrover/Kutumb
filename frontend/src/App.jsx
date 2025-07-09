@@ -6,7 +6,7 @@ import HomePage from './Components/Homepage.jsx';
 import Services from './Components/Services.jsx';
 import  Contact  from './Components/Contact.jsx';
 import Products from './Components/Product.jsx';
-// import AboutPage from './Components/AboutPage'; // You’ll make this next
+import AboutUs from './Components/AboutUs'; 
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/products" element={<Products />} />
         <Route path="/contactus" element={<Contact />} />
-        {/* <Route path="/about" element={<AboutPage />} /> */}
+        <Route path="/aboutus" element={<AboutUs/>} />
       </Routes>
     </Router>
   );

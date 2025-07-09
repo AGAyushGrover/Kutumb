@@ -159,10 +159,10 @@ const HomePage = () => {
           >
             <nav className="text-white space-y-4 text-lg">
               <Link to="/" className="block hover:underline">Home</Link>
-              <Link to="/about" className="block hover:underline">About</Link>
+              <Link to="/aboutus" className="block hover:underline">AboutUs</Link>
               <Link to="/products" className="block hover:underline">Products</Link>
               <Link to="/services" className="block hover:underline">Services</Link>
-              <Link to="/contactus" className="block hover:underline">Contact</Link>
+              <Link to="/contactus" className="block hover:underline">ContactUs</Link>
             </nav>
           </motion.div>
         )}
