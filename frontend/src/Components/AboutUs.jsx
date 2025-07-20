@@ -15,9 +15,12 @@ function AboutUs() {
   style={{ backgroundImage: `url("https://i.pinimg.com/736x/f2/99/55/f299555aeeebcd1f75596201d06f4513.jpg")` }}
 ></div>     
 
-    <div className='text-5xl font-bold text-amber-500 py-2 px-8'>About Us</div> 
+    <div className='text-5xl font-bold text-amber-500 py-2 px-8 flex flex-row gap-12'>
+    <div  className='w-[100px] h-[100px]'><img src={logo}/></div>
+    <div className='mt-4'>About Us</div>
+    </div> 
       {/* intro */}
-        <div className='w-[80%] h-[70%] rounded-xl bg-white/10 backdrop-blur-md border border-white/30 shadow-md text-white flex felx-row items-center justify-center mt-12 ml-8'>
+        <div className='w-[80%] h-[70%] rounded-xl bg-white/10 backdrop-blur-md border border-white/30 shadow-md text-white flex felx-row items-center justify-center mt-2 ml-8'>
         
         <div className='flex flex-col gap-4 w-[60%] ml-6 '>
             <div className='text-sm  w-[70px] px-1 py-1 border-2 border-amber-400 rounded-4xl '>About us</div>
@@ -95,31 +98,41 @@ function AboutUs() {
       </div>
 
         {/* why better than competion */}
-        <div className=' ml-8 w-[80%] h-[70%] rounded-xl bg-white/10 backdrop-blur-md border border-white/30 shadow-md text-white flex flex-col items-center justify-evenly mt-20 py-6 gap-4 mb-6'>
-        <div className='text-4xl text-amber-500'>Core features that set us apart form Ohters</div>
+        <div className=' ml-8 w-[80%] h-[70%] rounded-xl bg-white/10 backdrop-blur-md border border-white/30 shadow-md text-white flex flex-row items-center justify-evenly mt-12  gap-4 mb-6'>
+        
+        <div className=' text-white flex flex-col items-center justify-evenly w-[60%] gap-6 '>
+        
+         <div className='text-xl text-white px-2 border-2 rounded-3xl  border-amber-500 '>Core features that set us apart form Ohters</div>
 
-        <div className='flex flex-row justify-evenly'>
-            <div className='flex flex-col  w-[25%] border-1 rounded-sm px-3 py-4  bg-black/60 backdrop-blur-md  '>
+        <div className='flex flex-row justify-evenly '>
+            <div className='  flex flex-col  w-[30%] border-1 rounded-xl px-3 py-4  bg-black/60 backdrop-blur-md  '>
         <div><FontAwesomeIcon icon={faCircleUser} style={{ color: "#f59e0b", fontSize: '40px' }} /></div>
         <div className='text-2xl text-amber-500'>Customer Oriented</div>
-        <div>User need not to fo to differentd wesites or app as this project take care of all housing needs from start to endsamll to large.</div>
+        <div className='text-sm'>User need not to fo to differentd wesites or app as this project take care of all housing needs from start to endsamll to large.</div>
             
         </div>
 
-        <div className='flex flex-col  w-[25%] border-1   rounded-sm px-3 py-4  bg-black/60 backdrop-blur-md   '>
+        <div className='flex flex-col  w-[30%] border-1   rounded-xl px-3 py-4  bg-black/60 backdrop-blur-md   '>
         <div><FontAwesomeIcon icon={faMoneyBill} style={{ color: "#f59e0b", fontSize: '40px' }} /></div>
         <div className='text-2xl  text-amber-500'>Value for money</div>
-        <div>User can check for different suppliers for a wide ranges of products and pricing and can select what best suite to them.</div>
+        <div className='text-sm'>User can check for different suppliers for a wide ranges of products and pricing and can select what best suite to them.</div>
 
 
         </div>
-        <div className='flex flex-col  w-[25%] border-1    rounded-sm px-3 py-4  bg-black/60 backdrop-blur-md   '>
+        <div className='flex flex-col  w-[30%] border-1    rounded-xl px-3 py-4  bg-black/60 backdrop-blur-md   '>
         <div ><FontAwesomeIcon icon={faChartLine} style={{ color: "#f59e0b", fontSize: '40px' }} /></div>
-        <div className='text-2xl  text-amber-500'>Increase Sales</div>
-        <div>Supplier also able to increase its business profitability buy having more potential customers to its goods and services</div>
+        <div className='text-2xl  text-amber-500'>Increase in Sales</div>
+        <div className='text-sm'>Supplier also able to increase its business profitability buy having more potential customers to its goods and services</div>
             
         </div>
         </div>
+
+        </div>
+
+         <div className='w-[40%]  h-full'>
+            <img className='h-full w-full object-fit rounded-sm' src='https://i.pinimg.com/736x/ab/d7/ba/abd7ba355fedac6999160b2107fe60a9.jpg'/>
+        </div>
+        
        
       </div>
 
