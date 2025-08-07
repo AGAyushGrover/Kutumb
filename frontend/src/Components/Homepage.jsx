@@ -102,9 +102,8 @@ const HomePage = () => {
           <span className="text-white font-serif text-5xl">KUTUMB</span>
         </div>
 
-        <div className="flex items-center space-x-6 text-white font-medium">
-          <a href="#" className="hover:underline">EN</a>
-          <a href="#" className="hover:underline">HI</a>
+        <div className="flex items-center space-x-6 text-white font-serif">
+          <Link to="/signup" className="px-3 py-2 border border-white rounded-full hover:bg-white hover:text-black transition ">LogIn / SignUp</Link>
           <button
             onClick={toggleSidebar}
             className="p-2 border border-white rounded-full hover:bg-white hover:text-black transition"
@@ -163,6 +162,7 @@ const HomePage = () => {
               <Link to="/products" className="block hover:underline">Products</Link>
               <Link to="/services" className="block hover:underline">Services</Link>
               <Link to="/contactus" className="block hover:underline">ContactUs</Link>
+              <Link to="/account" className="block hover:underline">Account</Link>
             </nav>
           </motion.div>
         )}
