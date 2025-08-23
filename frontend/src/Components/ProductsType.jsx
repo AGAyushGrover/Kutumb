@@ -3,7 +3,7 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import React from 'react'
 import { useLocation } from 'react-router-dom';
-import products from '../dataset/productsData'
+
 import logo from "../assets/kutumb-logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faStar} from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +11,8 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import {faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useState,useEffect } from 'react';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
+import defaultCompanyLogo from "../assets/defaultCompanyLogo.jpg";
 
 function ProductsType() {
 
@@ -20,7 +22,34 @@ var isEmpty=true;
   const [searchParameter ,setSearchParameter]=useState("");
   const [currentLocation,setCurrentLocation]=useState([28.6139,77.2090]);
   
+  const location=useLocation();
+  const pathName=location.pathname;
+  const type=pathName.split("/")[1];
+  const typeName=pathName.split("/")[2];
+  const [products, setProducts] = useState([]);
+
+  
   useEffect(()=>{
+
+    const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/filterdata/${type}/${typeName}`,
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+        }
+      );
+      const val = await response.json();
+      setProducts(val.data);
+      console.log("Response:", val);
+    } catch (error) {
+      console.error("Error fetching:", error);
+    }
+  };
+
+  fetchData();
     navigator.geolocation.getCurrentPosition(
       (position)=>{
         const {latitude,longitude}=position.coords;
@@ -33,18 +62,14 @@ var isEmpty=true;
   },[]);
 
 
-  const location=useLocation();
-  const pathName=location.pathname;
-  const type=pathName.split("/")[1];
-  const typeName=pathName.split("/")[2];
-
-
- function matchSearch(given, toMatch) {
+ 
+ function matchSearch(given, toMatch) { 
   if (!given) return true;
   const lowerGiven = given.toLowerCase();
   const firstName = toMatch.split(",")[0]?.trim().toLowerCase();
   const secondName = toMatch.split(" ")[1]?.trim().toLowerCase();
-  return lowerGiven === firstName || lowerGiven === secondName;
+
+  return (lowerGiven === firstName || lowerGiven === secondName);
 }
 
   
@@ -89,16 +114,22 @@ var isEmpty=true;
         <div className='mt-4 relative flex flex-col items-center  w-[50%] h-full gap-4 mb-16 ' >
 
                {/* bg-white/10 backdrop-blur-md border border-white/30 shadow-md text-center rounded-xl */}
-        { products[typeName].map((company,index)=>(
-          (matchSearch(searchParameter,company.location))?
-         (isEmpty=false, <div className='h-[150px] w-[90%]  bg-white/10 backdrop-blur-md border border-white/30 shadow-md  border-none rounded-sm flex flex-row items-center '>
-          <div className='ml-2 w-[50%]'><img className=' rounded-sm h-[130px]' src={company.image_url}/></div>
+        { products.map((company,index)=>(
+          (matchSearch(searchParameter,company.address))?
+         (isEmpty=false, <div key={index} className='h-[150px] w-[90%]  bg-white/10 backdrop-blur-md border border-white/30 shadow-md  border-none rounded-sm flex flex-row items-center '>
+          <div className='ml-2 w-[50%]'>
+           { company.user_image_url && company.user_image_url !== 'Not Specified' ? (
+            <img className=' rounded-sm h-[130px]' src={company.user_image_url}/>
+          ) : (
+            <img className=' rounded-sm h-[130px]' src={defaultCompanyLogo}/>
+          )}
+          </div>
            <div className='flex flex-col w-[80%] gap-2'>
            <div className='text-white text-2xl'>{company.name}</div>
             
             <div className='flex flex-row gap-2 items-center '>
             { company.tags.map((tag,index1)=>(
-              <div className='flex flex-row justify-center items-center'>
+              <div key={index1} className='flex flex-row justify-center items-center'>
               <div className='flex justify-center items-center text-3xl'></div>
               <div className=' text-white opacity-75 border-1 rounded-xl border-amber-500 text-[10px]  px-2'>{tag} </div>
               
@@ -114,8 +145,8 @@ var isEmpty=true;
             </div>
             <div className='flex flex-row gap-2 relative'>
               <div><FontAwesomeIcon icon={faLocationDot} style={{ color: "#f59e0b", fontSize: '15px' }} /></div>
-              <div className='text-white' >{company.location}</div>
-              <div className='fixed right-2 text-white  bg-amber-500 rounded-sm px-2'>Show More</div>
+              <div className='text-white' >{company.address}</div>
+              <div  className='fixed right-2 text-white  bg-amber-500 rounded-sm px-2'> <Link to={`/profile/${company.userid}`}>More info</Link></div>
             </div>
            </div> 
           </div>):(<div></div>)
@@ -159,14 +190,21 @@ var isEmpty=true;
       attribution='&copy; OpenStreetMap contributors'
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
-    {products[typeName].map((company,index3) => (
-      (matchSearch(searchParameter,company.location))?
-      (<Marker key={index3} position={company.coordinates} >
-        <Popup>
-          <strong>{company.name}</strong><br />
-          {company.location}
-        </Popup>
-      </Marker>):<></>
+    {products.map((company,index3) => (
+      (matchSearch(searchParameter,company.address))?
+      (  
+        <Marker
+  key={index3}
+  position={[
+    parseFloat(company.coordinates?.lat?.$numberDecimal ?? company.coordinates?.lat),
+    parseFloat(company.coordinates?.lon?.$numberDecimal ?? company.coordinates?.lng)
+  ]}
+>
+  <Popup>
+    <strong>{company.name}</strong><br />
+    {company.address}
+  </Popup>
+</Marker>):<></>
     ))}
   </MapContainer>
 </div>

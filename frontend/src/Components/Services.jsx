@@ -19,13 +19,13 @@ import backgroundImage from "../assets/ServicePage/services-bg.jpg";
 import logoImage from "../assets/kutumb-logo.png";
 
 const services = [
-  { name: "Marble Worker", image: marbleWorkerImage, link: "/services/plumber", description: "Expert floor marble and tile workers for residential & commercial projects." },
-  { name: "Plumber", image: plumberImage, link: "/services/plumber", description: "Expert plumbing for residential & commercial projects." },
-  { name: "Painter", image: painterImage, link: "/services/painter", description: "Professional painting with luxurious finishes." },
-  { name: "Carpenter", image: carpenterImage, link: "/services/carpenter", description: "Custom woodwork & furniture by skilled carpenters." },
-  { name: "Interior Designer", image: interiorImage, link: "/services/interior-designer", description: "Elegant interiors crafted to your vision." },
-  { name: "Constructor", image: constructorImage, link: "/services/constructor", description: "Full-scale construction with premium quality." },
-  { name: "Electrician", image: electricianImage, link: "/services/electrician", description: "Safe, modern electrical solutions for your home." },
+  { name: "Marble Worker", image: marbleWorkerImage, link: "/service/marble", description: "Expert floor marble and tile workers for residential & commercial projects." },
+  { name: "Plumber", image: plumberImage, link: "/service/plumber", description: "Expert plumbing for residential & commercial projects." },
+  { name: "Painter", image: painterImage, link: "/service/painter", description: "Professional painting with luxurious finishes." },
+  { name: "Carpenter", image: carpenterImage, link: "/service/carpenter", description: "Custom woodwork & furniture by skilled carpenters." },
+  { name: "Interior Designer", image: interiorImage, link: "/service/interior-designer", description: "Elegant interiors crafted to your vision." },
+  { name: "Constructor", image: constructorImage, link: "/service/constructor", description: "Full-scale construction with premium quality." },
+  { name: "Electrician", image: electricianImage, link: "/service/electrician", description: "Safe, modern electrical solutions for your home." },
 ];
 
 const ratings = [

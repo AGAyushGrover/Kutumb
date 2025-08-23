@@ -10,6 +10,9 @@ import Products from './Components/Product.jsx';
 import AboutUs from './Components/AboutUs'; 
 import ServicesType from './Components/ServicesType.jsx';
 import ProductsType  from './Components/ProductsType.jsx';
+import UserProfile from './Components/UserProfile.jsx';
+import Login from './Components/Login.jsx';
+import SignUp from './Components/SignUp.jsx';
 
 function App() {
 
@@ -19,11 +22,14 @@ function App() {
 
       <Routes>
      
-         <Route path="/products/:typeName" element={<ProductsType/>}/>
-         
+         <Route path="/product/:typeName" element={<ProductsType/>}/>
+         <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<SignUp/>} />
+
+        <Route path="/profile/:typeName" element={<UserProfile/>}/>
         <Route path="/" element={<HomePage />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/service" element={<Services />} />
+        <Route path="/product" element={<Products />} />
         <Route path="/contactus" element={<Contact />} />
         <Route path="/aboutus" element={<AboutUs/>} />
         {

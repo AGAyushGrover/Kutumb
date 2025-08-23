@@ -25,61 +25,61 @@ const products = [
   { 
     name: "Plumbering Shops", 
     image: plumberImage, 
-    link: "/products/plumber", 
+    link: "/product/plumber", 
     description: "Premium plumbing fittings & sanitary solutions for every project." 
   },
   { 
     name: "Sanitary Shops", 
     image: SanitaryImage, 
-    link: "/products/sanitary", 
+    link: "/product/sanitary", 
     description: "Top-quality sanitary ware and bathroom essentials." 
   },
   { 
     name: "Paint Shops", 
     image: painterImage, 
-    link: "/products/paint", 
+    link: "/product/paint", 
     description: "Vibrant paints & finishes for flawless walls and exteriors." 
   },
   { 
     name: "Wood & Plywood Shops", 
     image: carpenterImage, 
-    link: "/products/carpenter", 
+    link: "/product/carpenter", 
     description: "Finest wood, ply, mic, accessories & carpenter supplies for your custom furniture." 
   },
   { 
     name: "Furniture Shops", 
     image: furnitureImage, 
-    link: "/products/furniture", 
+    link: "/product/furniture", 
     description: "Designer furniture that elevates your spaces with style." 
   },
   { 
     name: "Construction Material Shops", 
     image: constructionImage, 
-    link: "/products/construction", 
+    link: "/product/construction", 
     description: "Reliable construction materials for safe, lasting builds." 
   },
   { 
     name: "Electrical Shops", 
     image: electricianImage, 
-    link: "/products/electrical", 
+    link: "/product/electrical", 
     description: "Modern electricals, wires & fittings for safe installations." 
   },
   { 
     name: "Steel Works Shops", 
     image: steelWorksImage, 
-    link: "/products/steel-works", 
+    link: "/product/steel-works", 
     description: "Quality steel works & fabrications for sturdy structures." 
   },
   { 
     name: "Marble Shops", 
     image: marbleImage, 
-    link: "/products/marble", 
+    link: "/product/marble", 
     description: "Premium marble & stone for elegant floors & surfaces." 
   },
   { 
     name: "Machinery and Shattering Shops", 
     image: machineryImage, 
-    link: "/products/machinery", 
+    link: "/product/machinery", 
     description: "Heavy-duty construction machinery & tools for all needs." 
   },
 ];
