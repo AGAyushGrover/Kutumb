@@ -133,7 +133,7 @@ const SignUp = () => {
             <h2 className="text-3xl md:text-4xl font-serif mb-6">
               Sign Up With
             </h2>
-            <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex flex-col gap-6">
               <button
                 onClick={() => handleMethodSelect("email")}
                 className="px-8 py-4 border border-white rounded-full hover:bg-white hover:text-black transition"

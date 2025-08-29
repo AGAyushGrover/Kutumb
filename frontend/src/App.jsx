@@ -21,20 +21,15 @@ function App() {
     <Router>
 
       <Routes>
-     
-         <Route path="/product/:typeName" element={<ProductsType/>}/>
-         <Route path="/login" element={<Login/>} />
-        <Route path="/signup" element={<SignUp/>} />
-
-        <Route path="/profile/:typeName" element={<UserProfile/>}/>
         <Route path="/" element={<HomePage />} />
+        <Route path="/product/:typeName" element={<ProductsType/>}/>
+        <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/profile/:typeName" element={<UserProfile/>}/>
         <Route path="/service" element={<Services />} />
         <Route path="/product" element={<Products />} />
         <Route path="/contactus" element={<Contact />} />
         <Route path="/aboutus" element={<AboutUs/>} />
-        {
-
-        }
       </Routes>
 
     </Router>

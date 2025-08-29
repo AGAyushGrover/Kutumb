@@ -6,7 +6,9 @@ import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 import { faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom'; // Import the Link component
 import Footer from './Footer';
+
 function AboutUs() {
   return (
     <div>
@@ -15,23 +17,20 @@ function AboutUs() {
   style={{ backgroundImage: `url("https://i.pinimg.com/736x/f2/99/55/f299555aeeebcd1f75596201d06f4513.jpg")` }}
 ></div>     
 
-    <div className='text-5xl font-bold text-amber-500 py-2 px-8 flex flex-row gap-12'>
-    <div  className='w-[100px] h-[100px]'><img src={logo}/></div>
+    {/* The change is here: Use the Link component from react-router-dom */}
+    <Link to="/" className='text-5xl font-bold text-amber-500 py-2 px-8 flex flex-row gap-12'>
+    <div  className='w-[100px] h-[100px]'><img src={logo} alt="Kutumb Logo"/></div>
     <div className='mt-4'>About Us</div>
-    </div> 
+    </Link> 
       {/* intro */}
         <div className='w-[80%] h-[70%] rounded-xl bg-white/10 backdrop-blur-md border border-white/30 shadow-md text-white flex felx-row items-center justify-center mt-2 ml-8'>
         
         <div className='flex flex-col gap-4 w-[60%] ml-6 '>
-            <div className='text-sm  w-[70px] px-1 py-1 border-2 border-amber-400 rounded-4xl '>About us</div>
             <div className='text-xl'>About our Idea</div>
             <div>Have you ever imagined ,how much dificult someeon faces when building their homes
             form constructor to suppliers to workers acquasitoin all this take so much time and so stressfull,here is our 
             one platform complete housing solutoin KUTUMB</div>
-            <div className='flex flex-row gap-4'>
-            <div className='text-xl bg-amber-500 rounded-sm px-2 py-1'>Get Services</div>
-            <div className='border-2 border-amber-500 rounded-lg px-1 py-1'>Contact Us</div>
-            </div>
+            <div className='flex flex-row gap-4'></div>
             <div className='flex flex-row gap-4'>
             <div className='flex flex-col'>
                 <div className='text-4xl text-amber-500'>95%</div>
@@ -62,7 +61,7 @@ function AboutUs() {
             <img className='h-full w-full object-fit rounded-sm' src='https://i.pinimg.com/736x/a4/0b/31/a40b31bd7dd2b93fc548515e4e079179.jpg'/>
         </div>
         <div className='flex flex-col gap-4 w-[60%] ml-6 '>
-            <div className='text-sm  w-[70px] px-1 py-1 border-2 border-amber-400 rounded-4xl '>About us</div>
+            {/* <div className='text-sm  w-[70px] px-1 py-1 border-2 border-amber-400 rounded-4xl '>About us</div> */}
             <div className='text-xl'>Unlock our resources for future ready home</div>
             <div>Have you ever imagined ,how much dificult someeon faces when building their homes
             form constructor to suppliers to workers acquasitoin all this take so much time and so stressfull,here is our 
@@ -85,16 +84,10 @@ function AboutUs() {
                     <div className='flex felx-row gap-2' >
                       <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#f59e0b", fontSize: '25px' }} />Long term support</div>
                     <div className='flex felx-row gap-2' >
-                      <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#f59e0b", fontSize: '25px' }} />Customer supplier interaction</div>
-                    
+                      <FontAwesomeIcon icon={faCircleCheck} style={{ color: "#f59e0b", fontSize: '25px' }} />Customer supplier interaction</div>  
                 </div>
             </div>
-            
-            
         </div>
-        
-
-        
       </div>
 
         {/* why better than competion */}
@@ -147,12 +140,3 @@ function AboutUs() {
 }
 
 export default AboutUs
-
-
-
-
-
-
-
-
-

@@ -355,7 +355,7 @@ const HomePage = () => {
         initial={{ y: -50 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8 }}
-        className="fixed top-0 left-0 w-full flex items-center justify-between px-8 py-6 bg-black backdrop-blur-md z-50"
+        className="fixed top-0 left-0 w-full flex items-center justify-between px-8 py-6 bg-black/30 backdrop-blur-md z-50"
       >
         <div
           onClick={handleLogoClick}
@@ -366,7 +366,7 @@ const HomePage = () => {
         </div>
 
         <div className="flex items-center space-x-6 text-white font-serif">
-        <a href="/profile/me" className=" border-2 border-white rounded-md px-2 py-1 ">Me</a>
+        <a href="/profile/me" className=" border-2 border-white rounded-md px-2 py-1 ">PROFILE</a>
 {!isLoggedIn && (
           <Link
             to="/signup"
@@ -433,7 +433,6 @@ const HomePage = () => {
               <Link to="/product" className="block hover:underline">Products</Link>
               <Link to="/service" className="block hover:underline">Services</Link>
               <Link to="/contactus" className="block hover:underline">ContactUs</Link>
-              <Link to="/profile/me" className="block hover:underline">Account</Link>
             </nav>
           </motion.div>
         )}
